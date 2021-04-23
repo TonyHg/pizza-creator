@@ -23,6 +23,8 @@
   border: $red 1px solid;
   border-radius: 10px;
   color: $red;
+  font-size: 24px;
+  font-weight: bold;
   &:hover, &:active {
     background-color: $red;
     color: whitesmoke;
