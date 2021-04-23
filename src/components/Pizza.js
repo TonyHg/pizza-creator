@@ -6,7 +6,7 @@ import '../css/Pizza.scss';
 export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setCheese}) {
   const pizzaCardStyle = "pizza-card shadow m-2 p-5 d-flex flex-column";
   const pizzaReturnStyle = "pizza-return"
-  const pizzaChoiceTitleStyle = "pizza-card-title text-center";
+  const pizzaChoiceTitleStyle = "pizza-card-title";
   const pizzaRowStyle = "d-flex justify-content-around p-3 h-100";
   const pizzaChoiceStyle = "pizza-choice m-auto";
   const pizzaStyle = "d-flex h-100 w-100";
@@ -14,7 +14,7 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
 
   if (pizza.size === null) {
     return <div className={pizzaCardStyle}>
-      <div className={pizzaChoiceTitleStyle}>Choose the size: </div>
+      <div className={pizzaChoiceTitleStyle}><span className="invisible">⌫</span> Choose the size: </div>
       <div className={pizzaRowStyle}>
         <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.NORMAL)}>{pizzaSize.NORMAL}</div>
         <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.LARGE)}>{pizzaSize.LARGE}</div>

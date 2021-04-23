@@ -65,14 +65,15 @@ export default function PizzaCreator({pizzas, onUpdatePizza}) {
   const onClickTopping = (topping) => {
     const pizza = {...currentPizza};
     if (currentPizza.toppings.includes(topping))
-      pizza.toppings.filter(t => t !== topping);
+      pizza.toppings = pizza.toppings.filter(t => t !== topping);
     else
       pizza.toppings.push(topping);
     setCurrentPizza(pizza);
+    console.log(pizza);
   }
 
   return <>
     <PizzasDisplayer previousPizza={previousPizza} currentPizza={currentPizza} nextPizza={nextPizza} onPrevious={onPrevious} onNext={onNext} onUpdatePizza={onUpdatePizza} setSize={setSize} setSauce={setSauce} setCheese={setCheese}/>
-    <Toppings onClickTopping={onClickTopping}/>
+    <Toppings onClickTopping={onClickTopping} pizza={currentPizza}/>
   </>
 }
