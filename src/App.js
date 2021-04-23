@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from 'react';
+import './App.scss';
+
+import Header from './components/Header';
+import Checkout from './components/Checkout';
+import PizzaCreator from './components/PizzaCreator';
 
 function App() {
+  const [pizzas, setPizzas] = useState([]);
+
+  const onUpdatePizza = (pizza) => {
+    const pizzaIdx = pizzas.findIndex(p => p.id === pizza.id);
+    if (pizzaIdx !== -1) {
+      var newPizzas = [...pizzas];
+      newPizzas[pizzaIdx] = pizza;
+      setPizzas(newPizzas);
+    } else {
+      onAddPizza(pizza);
+    }
+  }
+
+  const onAddPizza = (pizza) => {
+    const newPizzas = [...pizzas];
+    newPizzas.push(pizza);
+    setPizzas(newPizzas);
+  }
+
+  const wrapperStyle = "wrapper d-flex my-5";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className={wrapperStyle}>
+        <Checkout pizzas={pizzas}/>
+        <PizzaCreator pizzas={pizzas} onUpdatePizza={onUpdatePizza}/>
+      </div>
     </div>
   );
 }
