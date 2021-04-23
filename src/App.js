@@ -4,6 +4,8 @@ import './App.scss';
 import Header from './components/Header';
 import Checkout from './components/Checkout';
 import PizzaCreator from './components/PizzaCreator';
+import Pay from './components/Pay';
+import roundToCents from './utils/Round';
 
 function App() {
   const [pizzas, setPizzas] = useState([]);
@@ -25,14 +27,23 @@ function App() {
     setPizzas(newPizzas);
   }
 
+  const onPay = () => {
+
+  }
+
   const wrapperStyle = "wrapper d-flex my-5";
+
+  var total = pizzas.reduce((acc, curr) => acc + (curr.size !== null ? curr.size.price : 0) + curr.toppings.reduce((a, c) => a + c.price, 0), 0);
+  total = roundToCents(total);
+
   return (
     <div className="App">
       <Header />
       <div className={wrapperStyle}>
-        <Checkout pizzas={pizzas}/>
+        <Checkout pizzas={pizzas} total={total}/>
         <PizzaCreator pizzas={pizzas} onUpdatePizza={onUpdatePizza}/>
       </div>
+      <Pay onPay={onPay} total={total}/>
     </div>
   );
 }
