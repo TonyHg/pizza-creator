@@ -22,13 +22,13 @@ const toppings = [
   { name: 'Nugget', price: 1, type: toppingType.MEAT},
   { name: 'Salmon', price: 1.50, type: toppingType.MEAT},
 
+  { name: 'Ananas', price: 0, type: toppingType.VEGGIE},
   { name: 'Basil', price: 0.5, type: toppingType.VEGGIE},
   { name: 'Egg', price: 1, type: toppingType.VEGGIE},
   { name: 'Mush', price: 0.75, type: toppingType.VEGGIE},
   { name: 'Onion', price: 0.25, type: toppingType.VEGGIE},
   { name: 'Olive', price: 0.25, type: toppingType.VEGGIE},
   { name: 'Pepper', price: 0.5, type: toppingType.VEGGIE},
-  { name: 'Pineapple', price: 0, type: toppingType.VEGGIE},
   { name: 'Potato', price: 1, type: toppingType.VEGGIE},
 ]
 

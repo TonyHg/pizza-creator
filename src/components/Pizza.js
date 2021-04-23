@@ -16,8 +16,8 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
     return <div className={pizzaCardStyle}>
       <div className={pizzaChoiceTitleStyle}><span className="invisible">⌫</span> Choose the size: </div>
       <div className={pizzaRowStyle}>
-        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.NORMAL)}>{pizzaSize.NORMAL}</div>
-        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.LARGE)}>{pizzaSize.LARGE}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.NORMAL)}>{pizzaSize.NORMAL.size}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.LARGE)}>{pizzaSize.LARGE.size}</div>
       </div>
     </div>
   }

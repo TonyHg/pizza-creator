@@ -3,8 +3,8 @@ import PizzasDisplayer from './PizzasDisplayer';
 import Toppings from './Toppings';
 
 export const pizzaSize = {
-  LARGE: "Large",
-  NORMAL: "Normal"
+  LARGE: { size: "Large", price: 4},
+  NORMAL: { size: "Normal", price: 3}
 };
 
 export const pizzaSauce = {
@@ -69,7 +69,6 @@ export default function PizzaCreator({pizzas, onUpdatePizza}) {
     else
       pizza.toppings.push(topping);
     setCurrentPizza(pizza);
-    console.log(pizza);
   }
 
   return <>
