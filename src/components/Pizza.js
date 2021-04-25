@@ -11,6 +11,13 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
   const pizzaChoiceStyle = "pizza-choice m-auto";
   const pizzaStyle = "d-flex h-100 w-100";
   const pizzaImageStyle = "m-auto";
+  const pizzaHiddenStyle = "pizza-card pizza-hidden";
+
+  if (!pizza) {
+    return <div className={pizzaHiddenStyle}>
+
+    </div>
+  }
 
   if (pizza.size === null) {
     return <div className={pizzaCardStyle}>

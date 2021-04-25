@@ -4,7 +4,7 @@ import '../css/Checkout.scss'
 
 
 export default function Checkout({pizzas, total}) {
-  const checkoutStyle = "checkout-card col-3 shadow d-flex flex-column";
+  const checkoutStyle = "checkout-card col-3 shadow-lg d-flex flex-column";
   const checkoutTitleStyle = "checkout-title";
   const checkoutPriceStyle = "checkout-price mt-auto mb-3";
   const pizzaStyle = "checkout-pizza";

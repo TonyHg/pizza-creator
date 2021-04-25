@@ -33,7 +33,7 @@ const toppings = [
 ]
 
 export default function Toppings({ onClickTopping, pizza }) {
-  const toppingsStyle = "toppings-card col-3 pt-1 shadow";
+  const toppingsStyle = "toppings-card col-3 pt-1 shadow-lg";
   const toppingSectionStyle = "mb-2";
   const toppingSectionTitleStyle = "topping-selection-title";
   const toppingFlexStyle = "d-flex flex-wrap";

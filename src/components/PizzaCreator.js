@@ -17,37 +17,17 @@ export const pizzaCheese = {
   NO_CHEESE: "No Cheese"
 }
 
-const initPizza = {
-  id: 0,
-  size: null,
-  sauce: null,
-  cheese: null,
-  toppings: []
-}
 
-export default function PizzaCreator({pizzas, onUpdatePizza}) {
-  const [previousPizza, setpreviousPizza] = useState(null);
-  const [currentPizza, setCurrentPizza] = useState(initPizza);
-  const [nextPizza, setNextPizza] = useState(null);
-
+export default function PizzaCreator({pizzas, currentPizza, currentPizzaIdx, setCurrentPizza, onPrevious, onNext, onUpdatePizza, onAddDummyPizza}) {
   useEffect(() => {
     onUpdatePizza(currentPizza);
   }, [currentPizza]);
-
-  const onPrevious = () => {
-    if (previousPizza === null)
-      return;
-
-  };
-
-  const onNext = () => {
-
-  };
 
   const setSize = (size) => {
     const pizza = {...currentPizza};
     pizza.size = size;
     setCurrentPizza(pizza);
+    onAddDummyPizza();
   }
 
   const setSauce = (sauce) => {
@@ -72,7 +52,13 @@ export default function PizzaCreator({pizzas, onUpdatePizza}) {
   }
 
   return <>
-    <PizzasDisplayer previousPizza={previousPizza} currentPizza={currentPizza} nextPizza={nextPizza} onPrevious={onPrevious} onNext={onNext} onUpdatePizza={onUpdatePizza} setSize={setSize} setSauce={setSauce} setCheese={setCheese}/>
+    <PizzasDisplayer previousPizza={pizzas[currentPizzaIdx - 1]} 
+                      currentPizza={pizzas[currentPizzaIdx]} 
+                      nextPizza={pizzas[currentPizzaIdx + 1]} 
+                      onPrevious={onPrevious} onNext={onNext} 
+                      onUpdatePizza={onUpdatePizza} setSize={setSize} 
+                      setSauce={setSauce} 
+                      setCheese={setCheese}/>
     <Toppings onClickTopping={onClickTopping} pizza={currentPizza}/>
   </>
 }
