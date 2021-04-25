@@ -4,6 +4,15 @@
   background-color: rgb(255, 250, 250);
   border-radius: 20px 0 0 20px; 
   z-index: 10;
+  filter: grayscale(0%);
+  transition: all 0.2s;
+  &.disabled {
+    filter: grayscale(50%);
+    cursor: not-allowed;
+    .topping-item {
+      cursor: not-allowed;
+    }
+  }
 }
 
 .topping-selection-title {

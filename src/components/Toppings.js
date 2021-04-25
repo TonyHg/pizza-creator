@@ -40,14 +40,18 @@ export default function Toppings({ onClickTopping, pizza }) {
   const toppingItemStyle = "topping-item m-2 mt-3";
   const toppingPriceStyle = "topping-price w-75 m-auto shadow"
 
-  return <div className={toppingsStyle}>
+  const canAddToppings = (pizza) => {
+    return pizza && pizza.size && pizza.sauce && pizza.cheese;
+  }
+
+  return <div className={toppingsStyle + (canAddToppings(pizza) ? "" : " disabled")}>
     {
       toppingTypeArray.map(type => 
       <div className={toppingSectionStyle} key={type}>
         <span className={toppingSectionTitleStyle}>{type}</span>
         <div className={toppingFlexStyle}>
           {toppings.filter(topping => topping.type === type).map(t => 
-            <div key={t.name} className={toppingItemStyle.concat(pizza.toppings.includes(t) ? " active": "")} onClick={() => onClickTopping(t)}>
+            <div key={t.name} className={toppingItemStyle.concat(pizza.toppings.includes(t) ? " active": "")} onClick={() => canAddToppings(pizza) && onClickTopping(t)}>
               <div className="w-100 h-75 d-flex">
                 <img src={Bacon} className="w-75 h-75 m-auto"/>
               </div>
