@@ -65,8 +65,10 @@ function App() {
   }
 
   const resetPizzas = () => {
-    setPizzas([deepCopyOf(initPizza)]);
+    const copy = deepCopyOf(initPizza);
+    setPizzas([copy]);
     setCurrentPizzaIdx(0);
+    setCurrentPizza(copy);
   }
 
   const onAddDummyPizza = () => {
