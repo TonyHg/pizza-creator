@@ -23,34 +23,34 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
     return <div className={pizzaCardStyle}>
       <div className={pizzaChoiceTitleStyle}><span className="invisible">⌫</span> Choose the size: </div>
       <div className={pizzaRowStyle}>
-        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.NORMAL)}>{pizzaSize.NORMAL.size}</div>
-        <div className={pizzaChoiceStyle} onClick={() => setSize(pizzaSize.LARGE)}>{pizzaSize.LARGE.size}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSize && setSize(pizzaSize.NORMAL)}>{pizzaSize.NORMAL.size}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSize && setSize(pizzaSize.LARGE)}>{pizzaSize.LARGE.size}</div>
       </div>
     </div>
   }
 
   if (pizza.sauce === null) {
     return <div className={pizzaCardStyle}>
-      <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setSize(null)}>⌫</span> Choose the sauce: </div>
+      <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setSize && setSize(null)}>⌫</span> Choose the sauce: </div>
       <div className={pizzaRowStyle}>
-        <div className={pizzaChoiceStyle} onClick={() => setSauce(pizzaSauce.TOMATO)}>{pizzaSauce.TOMATO}</div>
-        <div className={pizzaChoiceStyle} onClick={() => setSauce(pizzaSauce.CREME)}>{pizzaSauce.CREME}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSauce && setSauce(pizzaSauce.TOMATO)}>{pizzaSauce.TOMATO}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setSauce && setSauce(pizzaSauce.CREME)}>{pizzaSauce.CREME}</div>
       </div>
     </div>
   }
 
   if (pizza.cheese === null) {
     return <div className={pizzaCardStyle}>
-      <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setSauce(null)}>⌫</span> Do you want cheese: </div>
+      <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setSauce && setSauce(null)}>⌫</span> Do you want cheese: </div>
       <div className={pizzaRowStyle}>
-        <div className={pizzaChoiceStyle} onClick={() => setCheese(pizzaCheese.CHEESE)}>{pizzaCheese.CHEESE}</div>
-        <div className={pizzaChoiceStyle} onClick={() => setCheese(pizzaCheese.NO_CHEESE)}>{pizzaCheese.NO_CHEESE}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setCheese && setCheese(pizzaCheese.CHEESE)}>{pizzaCheese.CHEESE}</div>
+        <div className={pizzaChoiceStyle} onClick={() => setCheese && setCheese(pizzaCheese.NO_CHEESE)}>{pizzaCheese.NO_CHEESE}</div>
       </div>
     </div>
   }
 
   return <div className={pizzaCardStyle}>
-    <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setCheese(null)}>⌫</span> Select your toppings: </div>
+    <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setCheese && setCheese(null)}>⌫</span> Select your toppings: </div>
     <div className={pizzaStyle}>
       <span className={pizzaImageStyle}>Pizza picture</span>
       </div>
