@@ -7,6 +7,7 @@ import PizzaCreator from './components/PizzaCreator';
 import Pay from './components/Pay';
 import roundToCents from './utils/Round';
 import deepCopyOf from './utils/DeepCopy';
+import OrderSuccessModal from './components/OrderSuccessModal';
 
 const initPizza = {
   id: -1,
@@ -20,6 +21,7 @@ function App() {
   const [pizzas, setPizzas] = useState([deepCopyOf(initPizza)]);
   const [currentPizzaIdx, setCurrentPizzaIdx] = useState(0);
   const [currentPizza, setCurrentPizza] = useState(pizzas[currentPizzaIdx]);
+  const [modalVisibility, setModalVisibility] = useState(false)
 
   useEffect(() => {
     updateCurrentPizza();
@@ -76,6 +78,8 @@ function App() {
 
   const onPay = () => {
     resetPizzas();
+    setModalVisibility(true);
+    setTimeout(() => setModalVisibility(false), 2000);
   }
 
   const wrapperStyle = "wrapper d-flex my-5";
@@ -110,6 +114,7 @@ function App() {
                       onAddDummyPizza={onAddDummyPizza}/>
       </div>
       <Pay onPay={onPay} total={total}/>
+      <OrderSuccessModal visible={modalVisibility}/>
     </div>
   );
 }
