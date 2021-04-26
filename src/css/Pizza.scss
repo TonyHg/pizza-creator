@@ -29,8 +29,20 @@
     background-color: $red;
     color: whitesmoke;
   }
+  img {
+    width: 100px;
+
+    &#normal-size-img {
+      padding: 10px
+    }
+  }
 }
 
 .pizza-hidden {
   visibility: hidden;
+}
+
+.pizza-topping {
+  width: 42px;
+  position: absolute;
 }

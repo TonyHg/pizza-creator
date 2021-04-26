@@ -14,7 +14,8 @@ const initPizza = {
   size: null,
   sauce: null,
   cheese: null,
-  toppings: []
+  toppings: [],
+  image: null
 }
 
 function App() {

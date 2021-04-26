@@ -2,19 +2,25 @@ import { React, useState, useEffect } from 'react';
 import PizzasDisplayer from './PizzasDisplayer';
 import Toppings from './Toppings';
 
+import PizzaCompleted from '../assets/svg/pizza-completed.svg';
+import Tomato from '../assets/svg/tomato.svg';
+import TomatoCheese from '../assets/svg/tomato-cheese.svg';
+import Creme from '../assets/svg/creme.svg';
+import CremeCheese from '../assets/svg/creme-cheese.svg';
+
 export const pizzaSize = {
-  LARGE: { size: "Large", price: 4, image: ""},
-  NORMAL: { size: "Normal", price: 3, image: ""}
+  LARGE: { size: "Large", price: 4, image: PizzaCompleted},
+  NORMAL: { size: "Normal", price: 3, image: PizzaCompleted}
 };
 
 export const pizzaSauce = {
-  TOMATO: { name: "Tomato", image: ""},
-  CREME: { name: "Fresh Creme", image: ""}
+  TOMATO: { name: "Tomato", image: Tomato},
+  CREME: { name: "Creme", image: Creme}
 }
 
 export const pizzaCheese = {
-  CHEESE: { name: "Cheese", image: ""},
-  NO_CHEESE: { name: "No Cheese", image: ""}
+  CHEESE: { name: "Cheese", image: [TomatoCheese, CremeCheese]},
+  NO_CHEESE: { name: " ̶C̶h̶e̶e̶s̶e̶", image: [Tomato, Creme]}
 }
 
 
@@ -39,6 +45,7 @@ export default function PizzaCreator({pizzas, currentPizza, currentPizzaIdx, set
   const setCheese = (cheese) => {
     const pizza = {...currentPizza};
     pizza.cheese = cheese;
+    if (cheese) pizza.image = cheese.image[(pizza.sauce === pizzaSauce.TOMATO) ? 0 : 1];
     setCurrentPizza(pizza); 
   }
 
