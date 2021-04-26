@@ -75,59 +75,20 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
       {/* FIXME: try use for loop */}
       {
         pizza.toppings.map(topping => {
-          const top = Math.random() * 150 + 170;
-          const left = Math.random() * 150 + 300;
-          const style = {
-            top: top + "px",
-            left: left + "px"
-          };
-          return <img className={pizzaToppingStyle} style={style} src={topping.image} alt={topping.name}/>
+          const TOP_BEGIN = 150;
+          const LEFT_BEGIN = 300;
+          const top = Math.random() * 70;
+          const left = Math.random() * 70;
+          return <>
+            <img className={pizzaToppingStyle} style={{'top': TOP_BEGIN + top, 'left': LEFT_BEGIN + left}} src={topping.image} alt={topping.name}/>
+            <img className={pizzaToppingStyle} style={{'top': TOP_BEGIN + top + 50, 'left': LEFT_BEGIN + left + 100}} src={topping.image} alt={topping.name}/>
+            <img className={pizzaToppingStyle} style={{'top': TOP_BEGIN + top + 100, 'left': LEFT_BEGIN + left - 20}} src={topping.image} alt={topping.name}/>
+            <img className={pizzaToppingStyle} style={{'top': TOP_BEGIN + top, 'left': LEFT_BEGIN + left + 50}} src={topping.image} alt={topping.name}/>
+            <img className={pizzaToppingStyle} style={{'top': TOP_BEGIN + top + 100, 'left': LEFT_BEGIN + left + 60}} src={topping.image} alt={topping.name}/>
+          </>
         })
       }
-      {
-        pizza.toppings.map(topping => {
-          const top = Math.random() * 150 + 170;
-          const left = Math.random() * 150 + 300;
-          const style = {
-            top: top + "px",
-            left: left + "px"
-          };
-          return <img className={pizzaToppingStyle} style={style} src={topping.image} alt={topping.name}/>
-        })
-      }
-      {
-        pizza.toppings.map(topping => {
-          const top = Math.random() * 150 + 170;
-          const left = Math.random() * 150 + 300;
-          const style = {
-            top: top + "px",
-            left: left + "px"
-          };
-          return <img className={pizzaToppingStyle} style={style} src={topping.image} alt={topping.name}/>
-        })
-      }
-      {
-        pizza.toppings.map(topping => {
-          const top = Math.random() * 150 + 170;
-          const left = Math.random() * 150 + 300;
-          const style = {
-            top: top + "px",
-            left: left + "px"
-          };
-          return <img className={pizzaToppingStyle} style={style} src={topping.image} alt={topping.name}/>
-        })
-      }
-      {
-        pizza.toppings.map(topping => {
-          const top = Math.random() * 150 + 170;
-          const left = Math.random() * 150 + 300;
-          const style = {
-            top: top + "px",
-            left: left + "px"
-          };
-          return <img className={pizzaToppingStyle} style={style} src={topping.image} alt={topping.name}/>
-        })
-      }
+      
       </div>
   </div>
 }
