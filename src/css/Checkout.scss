@@ -25,3 +25,8 @@
 .checkout-topping {
   color:$red;
 }
+
+.checkout-list {
+  overflow-y: scroll;
+  max-height: 470px;
+}
