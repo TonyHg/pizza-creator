@@ -3,18 +3,18 @@ import PizzasDisplayer from './PizzasDisplayer';
 import Toppings from './Toppings';
 
 export const pizzaSize = {
-  LARGE: { size: "Large", price: 4},
-  NORMAL: { size: "Normal", price: 3}
+  LARGE: { size: "Large", price: 4, image: ""},
+  NORMAL: { size: "Normal", price: 3, image: ""}
 };
 
 export const pizzaSauce = {
-  TOMATO: "Tomato",
-  CREME: "Fresh Creme"
+  TOMATO: { name: "Tomato", image: ""},
+  CREME: { name: "Fresh Creme", image: ""}
 }
 
 export const pizzaCheese = {
-  CHEESE: "Cheese",
-  NO_CHEESE: "No Cheese"
+  CHEESE: { name: "Cheese", image: ""},
+  NO_CHEESE: { name: "No Cheese", image: ""}
 }
 
 
