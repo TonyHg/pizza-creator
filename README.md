@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# [pizza-creator](https://tonyhg.github.io/pizza-creator/)
+![pizza-creator](/overview.png)
 
+Access to pizza-creator via: https://tonyhg.github.io/pizza-creator/
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+* Make your pizza!
+* Order multiple pizzas
+* Cool UI and Animations
+
 
 ## Available Scripts
 
@@ -68,3 +77,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Credits
+[Tony Heng](https://github.com/TonyHg
