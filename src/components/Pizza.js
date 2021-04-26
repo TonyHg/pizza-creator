@@ -72,7 +72,7 @@ export default function Pizza({pizza, onUpdatePizza, setSize, setSauce, setChees
     <div className={pizzaChoiceTitleStyle}><span className={pizzaReturnStyle} onClick={() => setCheese && setCheese(null)}>⌫</span> Select your toppings: </div>
     <div className={pizzaStyle}>
       <img className={pizzaImageStyle} src={pizza.image} alt="pizza"/>
-      // FIXME: try use for loop
+      {/* FIXME: try use for loop */}
       {
         pizza.toppings.map(topping => {
           const top = Math.random() * 150 + 170;
